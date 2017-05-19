@@ -24,3 +24,4 @@ six==1.10.0
 sklearn==0.0
 subprocess32==3.2.7
 whitenoise==3.3.0
+django-cors-headers==2.0.2
