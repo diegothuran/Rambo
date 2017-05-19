@@ -8,6 +8,7 @@ from sklearn import preprocessing
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.feature_extraction.text import HashingVectorizer
 from sklearn.model_selection import train_test_split
+from sklearn.svm import LinearSVC
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.cluster import KMeans
 import numpy as np
@@ -106,7 +107,7 @@ def vectorize_database_hash(database):
 
     return data
 
-def split_database(database=[], labels =[], test_size =int):
+def split_database(database=[], labels =[], test_size =float):
     """
         Método que separa a base em vetores de treino e teste de acordo com uma porcentagem,
         dada no intervalo [0-1]
@@ -142,6 +143,7 @@ def load_database(metodo = 'tfidf'):
     labels = merge_lists(labels)
     labels = np.array(labels)
     labels = labels
+    vectorizer = None
 
     if metodo == 'tfidf':
         database, vectorizer = vectorize_database_tfidf(database)
@@ -160,3 +162,29 @@ def encoding_labels(labels, labels_to_encode):
     le = preprocessing.LabelEncoder()
     le.fit(labels_to_encode)
     return le.transform(labels)
+
+def training_models(train_dataset, labels_for_train_dataset_1, labels_for_train_dataset_2):
+    labels_1 = encoding_labels(labels_for_train_dataset_1, ['0', 'Product', 'Pro', 'Prod'])
+    labels_2 = encoding_labels(labels_for_train_dataset_2, ['0', 'Store'])
+
+    svm = LinearSVC()
+    svm2 = LinearSVC()
+
+    svm.fit(train_dataset, labels_1)
+    svm2.fit(train_dataset, labels_2)
+
+    return svm, svm2
+
+
+
+def test(self, patters, labels):
+    labels_1 = encoding_labels(labels[:, 0], ['0', 'Product', 'Pro', 'Prod'])
+    labels_2 = encoding_labels(labels[:, 1], ['0', 'Store'])
+    acertos = 0
+    for i in range(len(patters)):
+        a = [labels_1[i], labels_2[i]]
+        b = self.predict(patters[i])
+        temp = cmp(b, a)
+        if temp == 0:
+            acertos += 1
+    return float(float(acertos)/float(len(patters)))

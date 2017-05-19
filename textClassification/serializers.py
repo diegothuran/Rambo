@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from rest_framework import serializers
 
-from SentimentAnalisys.Ensemble import Esenmble
+from SentimentAnalisys.Ensemble import Ensemble
 from .models import Comment
 
 
@@ -19,7 +19,7 @@ class CommentSerializer(serializers.ModelSerializer):
             Método responsável por analisar cada comentário
         :return: A classe para a qual o comentário pertence
         """
-        ensemble = Esenmble()
+        ensemble = Ensemble()
         instance = Comment()
         instance.comment = request.get('comment', instance.comment)
         classification = ensemble.prediction(instance.comment)
