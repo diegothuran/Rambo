@@ -45,6 +45,7 @@ class Ensemble():
 
     def update_classifiers(self):
         new_patterns = Comment.objects.filter(is_to_update=True)
+        best = 0.0
         for pattern in new_patterns:
             temp = [pattern.comment]
             label1 = '0'
@@ -59,14 +60,22 @@ class Ensemble():
             self.labels.append(temp_label)
 
         for i in range(30):
-
-            extracted_database, self.vectorizer = vectorize_database_tfidf(database=self.database)
+            extracted_database, vectorizer = vectorize_database_tfidf(database=self.database)
+            X_train, X_test, y_train, y_test = split_database(extracted_database, self.labels, 0.1)
 
             svm1 = LinearSVC()
             svm2 = LinearSVC()
 
-            svm1 = self.train_svm(svm1, extracted_database, self.labels[:, 0])
-            svm2 = self.train_svm(svm1, extracted_database, self.labels[:, 1])
+            svm1.fit(X_train, y_train[:, 0])
+            svm2.fit(X_train, y_train[:, 1])
+
+            result = self.test(X_test, y_test, svm1, svm2)
+
+            if result > best:
+                result = best
+                joblib.dump(svm1, 'textClassification/SentimentAnalisys/ClassifierWeigths/svm-02.pkl')
+                joblib.dump(svm2, 'textClassification/SentimentAnalisys/ClassifierWeigths/svm2-02.pkl')
+
 
     def predict(self, patter, svm1, svm2):
         is_product = svm1.predict(patter)
@@ -74,13 +83,13 @@ class Ensemble():
 
         return [is_product[0], is_loja[0]]
 
-    def test(self, patters, labels):
+    def test(self, patters, labels, svm1, svm2):
         labels_1 = encoding_labels(labels[:, 0], ['0', 'Product', 'Pro', 'Prod'])
         labels_2 = encoding_labels(labels[:, 1], ['0', 'Store'])
         acertos = 0
         for i in range(len(patters)):
             a = [labels_1[i], labels_2[i]]
-            b = self.predict(patters[i])
+            b = self.predict(patters[i], svm1, svm2)
             temp = cmp(b, a)
             if temp == 0:
                 acertos += 1
