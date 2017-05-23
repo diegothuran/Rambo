@@ -22,8 +22,18 @@ def update_classifiers(patter_to_add, label = []):
 
 
 class Ensemble():
+    """
+        Classe responsável por usar vários classificadores, um para cada uma das classificações que utilizamos.
+            Até o momento os classificadores são dois: 
+                -   Um SVM linear para dizer se o review é de loja
+                -   Um SVM linear para classificar se o review é de produto.
+    """
 
     def __init__(self):
+        """
+            Método que inicializa a classe.
+            cls
+        """
         self.cls_product, self.cls_store = self.load_classifiers()
         self.database, self.labels, self.vectorizer = load_database()
 
