@@ -36,3 +36,12 @@ class CommentSerializer(serializers.ModelSerializer):
 
         return instance
 
+class UpdateSerializer(serializers.ModelSerializer):
+
+    Ensemble().update_classifiers()
+
+    class Meta:
+        model = Comment
+        fields = '__all__'
+
+

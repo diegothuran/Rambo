@@ -188,3 +188,30 @@ def test(self, patters, labels):
         if temp == 0:
             acertos += 1
     return float(float(acertos)/float(len(patters)))
+
+def load_raw_database():
+    """
+        Método que lê os arquivos csv da base de dados e já devole a base vetorizada com o método TF-IDF
+        por definição mas utilizando a variável metoto e mudando para hash o retorno é utilizando o métoro
+        de Hash
+    :param metodo: variável que define o método estatístico utilizado para extrair as características
+    :return: database: base de dados extraído utilizando o método chamado com a variável metodo
+             labels: rótulos correspondentes para cada vetor da matriz de base
+             vectorizer: instância responsável por transformar os novos inputs em
+    """
+    import os
+    database = []
+    labels =[]
+    root = "textClassification/SentimentAnalisys/Data"
+    for path_to_file in os.listdir(root):
+        data, labe = read_file(os.path.join(root, path_to_file))
+        database.append(data)
+        labels.append(labe)
+    database = merge_lists(database)
+    labels = merge_lists(labels)
+    labels = np.array(labels)
+    labels = labels
+
+
+
+    return database, labels.tolist()

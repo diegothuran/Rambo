@@ -56,6 +56,7 @@ class Ensemble():
     def update_classifiers(self):
         new_patterns = Comment.objects.filter(is_to_update=True)
         best = 0.0
+        database, labels = load_raw_database()
         for pattern in new_patterns:
             temp = [pattern.comment]
             label1 = '0'
@@ -66,25 +67,28 @@ class Ensemble():
                 label2 = 'Store'
             temp_label =[label1, label2]
 
-            self.database.append(pattern.comment)
-            self.labels.append(temp_label)
+            database.append(pattern.comment)
+            labels.append(temp_label)
 
         for i in range(30):
-            extracted_database, vectorizer = vectorize_database_tfidf(database=self.database)
-            X_train, X_test, y_train, y_test = split_database(extracted_database, self.labels, 0.1)
+            extracted_database, vectorizer = vectorize_database_tfidf(database=database)
+            X_train, X_test, y_train, y_test = split_database(extracted_database, labels, 0.1)
+
+            labels_1 = encoding_labels(y_train[:, 0], ['0', 'Product', 'Pro', 'Prod'])
+            labels_2 = encoding_labels(y_train[:, 1], ['0', 'Store'])
 
             svm1 = LinearSVC()
             svm2 = LinearSVC()
 
-            svm1.fit(X_train, y_train[:, 0])
-            svm2.fit(X_train, y_train[:, 1])
+            svm1.fit(X_train, labels_1)
+            svm2.fit(X_train, labels_2)
 
             result = self.test(X_test, y_test, svm1, svm2)
 
             if result > best:
-                result = best
-                joblib.dump(svm1, 'textClassification/SentimentAnalisys/ClassifierWeigths/svm-02.pkl')
-                joblib.dump(svm2, 'textClassification/SentimentAnalisys/ClassifierWeigths/svm2-02.pkl')
+                best = result
+                joblib.dump(svm1, 'textClassification/SentimentAnalisys/ClassifierWeigths/svm-03.pkl')
+                joblib.dump(svm2, 'textClassification/SentimentAnalisys/ClassifierWeigths/svm2-03.pkl')
 
 
     def predict(self, patter, svm1, svm2):
@@ -103,6 +107,7 @@ class Ensemble():
             temp = cmp(b, a)
             if temp == 0:
                 acertos += 1
+
         return float(float(acertos)/float(len(patters)))
 
     def train_svm(self, svm, database, labels):
