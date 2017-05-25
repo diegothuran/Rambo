@@ -1173,3 +1173,13 @@ Excelente,Product,,Good,,
 "Lindo, moderno e super confortável. Adorei!!",Product,,Good,,
 Entrega rapida...super recomendo o site...a base e maravilhosa.,Product,Store,Good,,
 "Ótima cafeteira! Prática e rápida, deixa o café ainda mais encorpado e gostoso! A entrega foi super rápida também! Recomendo! ",Product,Store,Good,,
+"chegou com atraso",,Store,Bad
+"Atrasou",,Store,Bad
+"Ainda não recebi",,Store,Bad
+"demorou muito a chegar",,Store,Bad
+"problema com os correios",,Store,Bad
+"Chegou quebrado",,Store,Bad
+"ainda não analisei",,,Neutral
+"Nada a declarar",,,Neutral
+"Não chegou",,,Neutral
+"Nada do produto ainda",,,Bad,
