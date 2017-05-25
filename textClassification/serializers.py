@@ -2,6 +2,7 @@
 from rest_framework import serializers
 
 from SentimentAnalisys.Ensemble import Ensemble
+from SentimentAnalisys.Util import tokenize
 from .models import Comment
 
 
@@ -38,7 +39,7 @@ class CommentSerializer(serializers.ModelSerializer):
 
 class UpdateSerializer(serializers.ModelSerializer):
 
-    Ensemble().update_classifiers()
+    #Ensemble().update_classifiers()
 
     class Meta:
         model = Comment

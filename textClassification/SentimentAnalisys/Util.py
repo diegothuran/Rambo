@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 import csv
+import string
+from nltk import stem, word_tokenize
 import random
 from sklearn.feature_extraction.text import CountVectorizer
 import cPickle
@@ -11,7 +14,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.svm import LinearSVC
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.cluster import KMeans
+from django.utils.encoding import force_str, smart_unicode, force_unicode
 import numpy as np
+
 
 def read_file(path):
     """
@@ -25,7 +30,7 @@ def read_file(path):
     labels = []
     with open(path, "rb") as csv_file:
         next(csv_file)
-        spamreader = csv.reader(csv_file, delimiter = ',')
+        spamreader = csv.reader(csv_file, delimiter = str(u','))
         for row in spamreader:
             row = map(lambda x: x if x != '' else '0', row)
             database.append(row[0])
@@ -84,12 +89,14 @@ def vectorize_database_tfidf(database):
     """
 
     database = map(lambda x: x.lower(), database)
+    database_ = [tokenize(sentence) for sentence in database]
+
     pt_stop_words = set(stopwords.words('portuguese'))
-    vectorizer = TfidfVectorizer(max_df=0.5, max_features=2000, lowercase=True,
+    vectorizer = TfidfVectorizer(max_df=0.5, max_features=2000, lowercase=False,
                                  min_df=2, stop_words=pt_stop_words, ngram_range=(1, 5),
                                  use_idf=True)
-    data = vectorizer.fit_transform(database)
-    terms = vectorizer.get_feature_names()
+    data = vectorizer.fit_transform(database_)
+
     return data.todense(), vectorizer
 
 def vectorize_database_hash(database):
@@ -134,7 +141,7 @@ def load_database(metodo = 'tfidf'):
     import os
     database = []
     labels =[]
-    root = "textClassification/SentimentAnalisys/Data"
+    root = u"textClassification/SentimentAnalisys/Data"
     for path_to_file in os.listdir(root):
         data, labe = read_file(os.path.join(root, path_to_file))
         database.append(data)
@@ -215,3 +222,14 @@ def load_raw_database():
 
 
     return database, labels.tolist()
+
+def tokenize(text):
+    steemming = stem.RSLPStemmer()
+    tokens = word_tokenize(force_unicode(text, encoding='utf-8', errors='ignore'))
+    tokens = [i for i in tokens if i not in string.punctuation]
+    stems = [steemming.stem(token) for token in tokens]
+    stems = join_strings(stems)
+    return stems
+
+def join_strings(list_of_strings):
+    return " ".join(list_of_strings)

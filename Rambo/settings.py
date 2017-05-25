@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'sklearn',
     'joblib',
     'numpy',
+    'nltk',
     'matplotlib',
     'rest_framework',
     'corsheaders',

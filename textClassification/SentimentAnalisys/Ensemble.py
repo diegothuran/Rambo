@@ -46,7 +46,7 @@ class Ensemble():
         return svm_product, svm_store
 
     def prediction(self, pattern):
-        pattern = self.vectorizer.transform([pattern])
+        pattern = self.vectorizer.transform([tokenize(pattern)])
         pattern = pattern.todense()
         is_product = self.cls_product.predict(pattern)
         is_store = self.cls_store.predict(pattern)
