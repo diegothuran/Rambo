@@ -227,7 +227,7 @@ def load_raw_database():
 
 def tokenize(text):
     steemming = stem.RSLPStemmer()
-    tokens = word_tokenize(force_unicode(text, encoding='utf-8', errors='ignore'))
+    tokens = word_tokenize(text.decode('utf8'))
     tokens = [i for i in tokens if i not in string.punctuation]
     stems = [steemming.stem(token) for token in tokens]
     stems = join_strings(stems)
