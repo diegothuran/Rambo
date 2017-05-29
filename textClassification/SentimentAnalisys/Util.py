@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
 import csv
 import string
 from nltk import stem, word_tokenize
@@ -44,7 +43,7 @@ def merge_lists(lists):
     :param lists: listas a serem unidas
     :return: uma lista com as informações contidas nas listas prévias
     """
-    return lists[0] + lists[1] + lists[2]
+    return lists[0] + lists[1] + lists[2] + lists[3]
 
 def find_ngrams(input_list, n):
     """
@@ -92,8 +91,8 @@ def vectorize_database_tfidf(database):
     database_ = [tokenize(sentence) for sentence in database]
 
     pt_stop_words = set(stopwords.words('portuguese'))
-    vectorizer = TfidfVectorizer(max_df=0.5, max_features=2000, lowercase=False,
-                                 min_df=2, stop_words=pt_stop_words, ngram_range=(1, 5),
+    vectorizer = TfidfVectorizer(max_df=0.7, max_features=2500, lowercase=False,
+                                 min_df=1, stop_words=pt_stop_words, ngram_range=(1, 7),
                                  use_idf=True)
     data = vectorizer.fit_transform(database_)
 
@@ -140,8 +139,8 @@ def load_database(metodo = 'tfidf'):
     """
     import os
     database = []
-    labels =[]
-    root = u"textClassification/SentimentAnalisys/Data"
+    labels = []
+    root = "textClassification/SentimentAnalisys/Data"
     for path_to_file in os.listdir(root):
         data, labe = read_file(os.path.join(root, path_to_file))
         database.append(data)
@@ -150,14 +149,17 @@ def load_database(metodo = 'tfidf'):
     labels = merge_lists(labels)
     labels = np.array(labels)
     labels = labels
-    vectorizer = None
+    replace_data(labels, 'Pro', 'Product')
+    replace_data(labels, 'Prod', 'Product')
+    replace_data(labels, ' ', '0')
 
-    if metodo == 'tfidf':
-        database, vectorizer = vectorize_database_tfidf(database)
-    elif metodo == 'hash':
-        database = vectorize_database_hash(database)
-
+    database, vectorizer = vectorize_database_tfidf(database)
     return database, labels, vectorizer
+
+def replace_data(list_labels, itens_to_replace, replacement_value):
+    indices_to_replace = [i for i,x in enumerate(list_labels) if x[0]==itens_to_replace]
+    for i in indices_to_replace:
+        list_labels[i][0] = replacement_value
 
 def encoding_labels(labels, labels_to_encode):
     """
@@ -171,7 +173,7 @@ def encoding_labels(labels, labels_to_encode):
     return le.transform(labels)
 
 def training_models(train_dataset, labels_for_train_dataset_1, labels_for_train_dataset_2):
-    labels_1 = encoding_labels(labels_for_train_dataset_1, ['0', 'Product', 'Pro', 'Prod'])
+    labels_1 = encoding_labels(labels_for_train_dataset_1, ['0', 'Product'])
     labels_2 = encoding_labels(labels_for_train_dataset_2, ['0', 'Store'])
 
     svm = LinearSVC()
@@ -185,7 +187,7 @@ def training_models(train_dataset, labels_for_train_dataset_1, labels_for_train_
 
 
 def test(self, patters, labels):
-    labels_1 = encoding_labels(labels[:, 0], ['0', 'Product', 'Pro', 'Prod'])
+    labels_1 = encoding_labels(labels[:, 0], ['0', 'Product'])
     labels_2 = encoding_labels(labels[:, 1], ['0', 'Store'])
     acertos = 0
     for i in range(len(patters)):

@@ -25,7 +25,7 @@ class CommentSerializer(serializers.ModelSerializer):
         instance.comment = request.get('comment', instance.comment)
         classification = ensemble.prediction(instance.comment)
 
-        if classification[0] == 3:
+        if classification[0] == 1:
             instance.is_product = True
         else:
             instance.is_product = False
