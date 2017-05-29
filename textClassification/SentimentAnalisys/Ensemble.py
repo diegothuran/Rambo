@@ -35,7 +35,7 @@ class Ensemble():
             cls
         """
         self.cls_product, self.cls_store = self.load_classifiers()
-        self.database, self.labels, self.vectorizer = load_database()
+        self.vectorizer = joblib.load("textClassification/SentimentAnalisys/Data/vectorizer.pkl")
 
 
     def load_classifiers(self):
