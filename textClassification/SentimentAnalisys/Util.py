@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 import csv
 import string
-from nltk import stem
+from nltk import stem, word_tokenize
 from sklearn.feature_extraction.text import CountVectorizer
 import cPickle
 from nltk.corpus import stopwords
 from sklearn import preprocessing
+from django.utils.encoding import smart_unicode
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.feature_extraction.text import HashingVectorizer
 from sklearn.model_selection import train_test_split
@@ -223,7 +224,7 @@ def load_raw_database():
 
 def tokenize(text):
     steemming = stem.RSLPStemmer()
-    tokens = text.decode('utf8').split()
+    tokens = word_tokenize(smart_unicode(text))
     tokens = [i for i in tokens if i not in string.punctuation]
     stems = [steemming.stem(token) for token in tokens]
     stems = join_strings(stems)
