@@ -13,6 +13,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.svm import LinearSVC
 import numpy as np
 
+"""
+    Classe de métodos úteis para o processamento de texto.
+"""
+
 
 def read_file(path):
     """
@@ -154,6 +158,13 @@ def load_database(metodo = 'tfidf'):
     return database, labels, vectorizer
 
 def replace_data(list_labels, itens_to_replace, replacement_value):
+    """
+        Método que retira as lábels erradas causadas por algum problema de digitação pela label correta
+    :param list_labels: labels a serem ajustadas
+    :param itens_to_replace: item que deve ser removido
+    :param replacement_value: item que deve ser substituido
+    :return: a lista de labels com os valores corretos.
+    """
     indices_to_replace = [i for i,x in enumerate(list_labels) if x[0]==itens_to_replace]
     for i in indices_to_replace:
         list_labels[i][0] = replacement_value
@@ -170,6 +181,13 @@ def encoding_labels(labels, labels_to_encode):
     return le.transform(labels)
 
 def training_models(train_dataset, labels_for_train_dataset_1, labels_for_train_dataset_2):
+    """
+        Método responsável por treinar os classificadores utilizados no sistema.
+    :param train_dataset: lista de sentenças utilzadas para o treinamento dos classificadores
+    :param labels_for_train_dataset_1: rótulos para treinar o classsificador que identifica se a sentença é de produto
+    :param labels_for_train_dataset_2: rótulos para treinar o classsificador que identifica se a sentença é de loja
+    :return: os classificadores treinados na seguninte ordem: classificador para produto, classificador para loja
+    """
     labels_1 = encoding_labels(labels_for_train_dataset_1, ['0', 'Product'])
     labels_2 = encoding_labels(labels_for_train_dataset_2, ['0', 'Store'])
 
@@ -181,19 +199,6 @@ def training_models(train_dataset, labels_for_train_dataset_1, labels_for_train_
 
     return svm, svm2
 
-
-
-def test(self, patters, labels):
-    labels_1 = encoding_labels(labels[:, 0], ['0', 'Product'])
-    labels_2 = encoding_labels(labels[:, 1], ['0', 'Store'])
-    acertos = 0
-    for i in range(len(patters)):
-        a = [labels_1[i], labels_2[i]]
-        b = self.predict(patters[i])
-        temp = cmp(b, a)
-        if temp == 0:
-            acertos += 1
-    return float(float(acertos)/float(len(patters)))
 
 def load_raw_database():
     """
@@ -218,11 +223,18 @@ def load_raw_database():
     labels = np.array(labels)
     labels = labels
 
-
-
     return database, labels.tolist()
 
 def tokenize(text):
+    """
+        Méotodo responsável por realizar os segunintes passos com uma data sentença:
+            - tokenize a sentença, ou seja, reparti-la em tokens ou em cada um dos elementos da sentença.
+            - remoção de pontuação
+            - processo de Stemming, em que a palavra é reduzida a seu radical.
+            - a sentença é novamente unida em uma única string já processada.
+    :param text: sentença a qual se deseja classificar.
+    :return: a senteça processada com apenas radicais de cada token.
+    """
     steemming = stem.RSLPStemmer()
     tokens = word_tokenize(smart_unicode(text))
     tokens = [i for i in tokens if i not in string.punctuation]
@@ -231,4 +243,9 @@ def tokenize(text):
     return stems
 
 def join_strings(list_of_strings):
+    """
+        Método para transformar tokens em uma única sentença
+    :param list_of_strings: Lista com os tokens
+    :return: sentença formada pela união dos tokens
+    """
     return " ".join(list_of_strings)
