@@ -92,9 +92,10 @@ def vectorize_database_tfidf(database):
     database_ = [tokenize(sentence) for sentence in database]
 
     pt_stop_words = set(stopwords.words('portuguese'))
-    vectorizer = TfidfVectorizer(max_df=0.7, max_features=2500, lowercase=False,
-                                 min_df=1, stop_words=pt_stop_words, ngram_range=(1, 7),
+    vectorizer = TfidfVectorizer(max_df=0.75, max_features=5000, lowercase=False, min_df=2, stop_words=pt_stop_words,
+                                 ngram_range=(1, 4),
                                  use_idf=True)
+
     data = vectorizer.fit_transform(database_)
 
     return data.todense(), vectorizer
