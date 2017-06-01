@@ -74,7 +74,7 @@ class Ensemble():
             extracted_database, vectorizer = vectorize_database_tfidf(database=database)
             X_train, X_test, y_train, y_test = split_database(extracted_database, labels, 0.1)
 
-            labels_1 = encoding_labels(y_train[:, 0], ['0', 'Product', 'Pro', 'Prod'])
+            labels_1 = encoding_labels(y_train[:, 0], ['0', 'Product'])
             labels_2 = encoding_labels(y_train[:, 1], ['0', 'Store'])
 
             svm1 = LinearSVC()
@@ -98,7 +98,7 @@ class Ensemble():
         return [is_product[0], is_loja[0]]
 
     def test(self, patters, labels, svm1, svm2):
-        labels_1 = encoding_labels(labels[:, 0], ['0', 'Product', 'Pro', 'Prod'])
+        labels_1 = encoding_labels(labels[:, 0], ['0', 'Product'])
         labels_2 = encoding_labels(labels[:, 1], ['0', 'Store'])
         acertos = 0
         for i in range(len(patters)):
