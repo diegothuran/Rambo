@@ -6434,3 +6434,11 @@ Estes ocorridos me fizeram arrepender-me da compra diversas vezes.,,Store,,,,,,,
 "odiei o atendimento",,Store,Bad
 "que merda de atendimento",,Store,Bad
 "o atendimento foi tão ruim que nunca mais eu volto a comprar aqui",,Store,Bad
+"Sempre quis ter um desses e adorei.",Product,,Good
+"Sempre quis ter um.",Product,,Good
+"há muito tempo eu procurava esse item, muito bom!",Product,,Good
+"há muito tempo eu procurava esse item, muito bom! Mas a compra foi terrível",Product,Store,Good
+"Sempre quis ter um desses e adorei. Só não gostei de ter de esperar mais de 20 dias.",Product,Store,Bad
+"Sempre quis ter um desses e adorei. Só demorou mais de 20 dias.",Product,Store,Bad
+"Só não gostei de ter de esperar mais de 20 dias.",,Store,Bad
+"Só não gostei da demora de esperar mais de 20 dias.",Product,Store,Bad
