@@ -6422,3 +6422,15 @@ Estes ocorridos me fizeram arrepender-me da compra diversas vezes.,,Store,,,,,,,
 "entrega atrasou.",,Store,Bad
 "odiei a entrega",,Store,Bad
 "Voltarei a comprar",Product,,Good
+"A bolsa é linda, mas fui mal atendido.",Product,Store,Bad
+"O relógio é lindo, mas fui mal atendido.",Product,Store,Bad
+"O relógio é ótimo, mas fui mal atendido.",Product,Store,Bad
+"A bolsa é ótima, mas o site é horrível.",Product,Store,Bad
+"A bolsa é ótima, mas o site é de dífícil compreensão.",Product,Store,Bad
+"A bolsa é ótima, mas o site é horrível.",Product,Store,Bad
+"fui mal atendido",,Store,Bad
+"atendimento péssimo",,Store,Bad
+"o atendimento dessa loja é triste",,Store,Bad
+"odiei o atendimento",,Store,Bad
+"que merda de atendimento",,Store,Bad
+"o atendimento foi tão ruim que nunca mais eu volto a comprar aqui",,Store,Bad
