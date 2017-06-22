@@ -1135,6 +1135,11 @@ Ok ,Product,,Good,,
 "Muito bom e com preço ótimo",Product,Store,Good,,
 "Achei que não tem gosto de nada. Mas isso é meu gosto. Minha mãe gostou. Mas chegou com atraso.",Product,Store,Bad,,
 "A bisnaga que eu recebi não veio totalmente cheia.",Product,,Bad,,
+"A bisnaga que eu recebi não veio totalmente cheia.",Product,,Bad,
+"O troço que eu recebi não veio como na foto",Product,,Bad,
+"recebi em perfeito estado, tudo conforme o combinado",Product,,Good,
+"Muito bom fazer negócio com vocês, recebi tudo conforme o desejado.",Product,,Good,
+"Não quero mais negócio com vocês, foi horrível o que eu recebi, a bisnaga veio vazia, o martelo quebrado e o rolo lascado",Product,,Bad,
 "Não usei ainda a amostra que recebi",Product,,Bad,,
 "Ótimo produto. Boa durabilidade e a entrega me surpreendeu positivamente.",Product,Store,Good,
 "Ótimo produto. Boa durabilidade e chegou rapidamente.",Product,Store,Good,
@@ -6442,3 +6447,51 @@ Estes ocorridos me fizeram arrepender-me da compra diversas vezes.,,Store,,,,,,,
 "Sempre quis ter um desses e adorei. Só demorou mais de 20 dias.",Product,Store,Bad
 "Só não gostei de ter de esperar mais de 20 dias.",,Store,Bad
 "Só não gostei da demora de esperar mais de 20 dias.",Product,Store,Bad
+"Sempre quis ter um desses e adorei. Só não gostei de ter de esperar mais de 2 semanas.",Product,Store,Bad
+"Sempre quis ter um desses e adorei. Só não gostei de ter de esperar mais de 1 mês.",Product,Store,Bad
+"Sempre gostei desse sapato. Mas não curti ter de esperar mais de 2 semanas.",Product,Store,Bad
+"não curti ter de esperar mais de 2 semanas.",,Store,Bad
+"não gostei ter de esperar mais de 2 semanas.",,Store,Bad
+"só odiei a espera de mais de 4 semanas.",,Store,Bad
+"esperar mais de 4 semanas que foi foda",,Store,Bad
+"foi uma demora eterna pra chegar, mais de 3 mês, mesmo sendo ótimo o produto. Não valeu a pena",Product,Store,Bad
+"não curti ter de esperar mais de 2 semanas.",,Store,Bad
+"O produto é excelente e ainda chegou antes das 2 semanas prometidas",Product,Store,Bad
+"não curti ter de esperar mais de 2 semanas.",,Store,Bad
+"Sempre que eu compro nesse site o produto chega antes do planejado não importa qual seja.",,Store,Bad
+"Realmente muito difícil pra achar os produtos. Não curti.",,Store,Bad
+"Muito complicado para encontar as coisas nesas loja",,Store,Bad
+"A organização da loja é horrível, muito difícil de encontrar tudo aqui.",,Store,Bad
+"Vamos falar do site, eu quase não consigo realizar uma compra aqui. Cada seção muito mal organizada, tudo fora do lugar, difícil de encontrar alguma coisa",,Store,Bad
+"Tentem melhorar um pouco a organização da loja.",,Store,Bad
+"A tiara é linda, mas não gostei do atendimento.",Product,Store,Bad
+"não gostei do atendimento.",,Store,Bad
+"Tive um problema na compra, o produto chegou arranhado, fui tentar conversar mas o atendimento foi péssimo, uma bosta",Product,Store,Bad
+"O atendimento foi uma bosta",,Store,Bad
+"Que merda de atendimento.",,Store,Bad
+"A calcinha é muito boa, mas o atendimento foi péssimo.",Product,Store,Bad
+"a meia da lingerie veio arranhada, mas o atendimento foi excelente e já recebi uma nova",Product,Store,Bad
+"pqp que atendimento péssimo",Product,Store,Bad
+"A tiara é linda, mas não gostei do atendimento",Product,Store,Bad
+"O produto é muito bom, mas o atendimento é péssimo",Product,Store,Bad
+"O produto é muito bom, mas não gostei do atendimento",Product,Store,Bad
+"O produto é muito bom, mas não curti o atendimento",Product,Store,Bad
+"A placa mãe é ótima, mas não gostei do atendimento",Product,Store,Bad
+"O processaor atende as minhas expectativas, mas não gostei do atendimento",Product,Store,Bad
+"Realmente, muito difícil para encontrar qualquer coisa nesse site.",Product,Store,Bad
+"Realmente, muito difícil para encontrar qualquer coisa nesse site.",Product,Store,Bad
+"Realmente, muito difícil para encontrar qualquer coisa nesse site.",Product,Store,Bad
+"Realmente, muito difícil para encontrar qualquer coisa nesse site.",Product,Store,Bad
+"Realmente, muito difícil para encontrar qualquer coisa nesse site.",Product,Store,Bad
+"Essa furadeira é ótima, mas não compro mais com vocês.",Product,Store,Bad
+"Essa lingerie é ótima, vou comprar mais com vocês.",Product,Store,Good
+"Essa furadeira é ótima, mas não compro mais com vocês.",Product,Store,Bad
+"não compro mais com vocês",,Store,Bad
+"Essa boneca é linda, mas não compro mais com vocês.",Product,Store,Bad
+"Essa furadeira é ótima, mas não compro mais com vocês.",Product,Store,Bad
+"Essa furadeira é ótima, mas não quero mais comprar com vocês, atendimento péssimo.",Product,Store,Bad
+"muito difícil para encontrar qualquer coisa nesse site.",Product,Store,Bad
+"difícil para encontrar qualquer coisa nesse site.",Product,Store,Bad
+"para encontrar qualquer coisa nesse site.",Product,Store,Good
+"encontrar qualquer coisa nesse site é dífícil.",Product,Store,Bad
+"encontrar qualquer coisa nesse site é muito dífícil.",Product,Store,Bad
