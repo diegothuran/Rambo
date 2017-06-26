@@ -6509,3 +6509,31 @@ Estes ocorridos me fizeram arrepender-me da compra diversas vezes.,,Store,,,,,,,
 "O produto entrega o que diz, caixa é de excelente qualidade, um dos melhores que recebi até hoje. Nem preciso falar dos livros que são lindos, de capa dura, fonte grande, páginas amareladas e excelente diagramação. Se a Nova Fronteira tiver outros Box, comprarei com certeza!",Product,,Good
 "O produto entraga o que diz",Product,,Good
 "Um dos melhores que recebi até hoje",Product,,Good
+"Realmente muito bom, mas a embalagem veio com defeito.",Product,Store,Bad
+"Muito bom, mas a embalagem veio com defeito.",Product,Store,Bad
+"Realmente muito bom, mas a embalagem nem tanto.",Product,Store,Bad
+"A embalagem nem tanto.",,Store,Bad
+"Amei esse perfume",Product,,Good
+"Amei esse perfume, mas a embalagem veio amassada.",Product,Store,Bad
+"a embalagem veio amassada.",,Store,Bad
+"O produto é muito bom, mas a transportadora pisou na bola.",Product,Store,Bad
+"a transportadora pisou na bola.",,Store,Bad
+"a transportadora atrasou.",Product,Store,Bad
+"a transportadora rasgou o pacote.",Product,Store,Bad
+"O produto é muito bom, mas a transportadora atrasou.",Product,Store,Bad
+"O produto é muito bom, mas nao sei se foi a transportadora mas a caixa chegou amassada.",Product,Store,Bad
+"O produto é muito bom, mas nao sei se foi a transportadora mas chegou quebrado.",Product,Store,Bad
+"A blusa é linda, mas veio mal embalada",Product,Store,Bad
+"A blusa é linda",Product,,Good
+"veio mal embalada",,Store,Bad
+"A blusa é linda, mas veio mal embalada",Product,Store,Bad
+"Acho que deveria ter vindo com plástico bolha.",,Store,Bad
+"deveria ter vindo com plástico bolha.",,Store,Bad
+"Se tivesse vindo envolto em plástivo bolha teria sido melhor",,Store,Bad
+"Foi uma boa escolha ter findo com plástico bolha",,Store,Good
+"deveria ter vindo com plástico bolha.",,Store,Bad
+"plástico bolha é a melhor coisa que existe, obrigado por mandar. kkkk",Product,,Good
+"ainda não entendi o porquê de não ter plástico bolha",,Store,Bad
+"O sofá veio todo sujo e cheio de manchas.",Product,,Bad
+"O sofá veio muito desarrumado e sujo",Product,,Bad
+"O secador veio manchado",Product,,Bad
