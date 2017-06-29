@@ -145,7 +145,7 @@ STATICFILES_DIRS = [
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 CORS_ORIGIN_WHITELIST = (
-    'trustvox.com.br',
+    '*.trustvox.com.br',
     'trustvox.github.io',
     'localhost:8000',
 )
