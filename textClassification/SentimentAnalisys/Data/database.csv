@@ -1664,7 +1664,7 @@ Tive dificuldade com o polimento,Product,,Dangerous,,
 ótimo,Product,,Good,,
 Muito bom. Bem embalado! Aprovado.,Product,,Good,,
 produto muito bom. o cadeado podia ser melhor,Product,,Dangerous,,
-"Otima central é top coloquei no meu Corolla show de bola , recomendo pra quem tiver querendo comprar . Não vai se arrepender ...",Product,,Good,,
+"Otima central é top coloquei no meu Corolla show de bola, recomendo pra quem tiver querendo comprar . Não vai se arrepender ...",Product,,Good,,
 Excelente !!!!,Product,,Good,,
 "Gostei  ele é duradouro fico cheirosa o dia inteiro.
 A entrega foi no prazo.Eu recomendo.",Product,Store,Good,,
@@ -4381,7 +4381,7 @@ fui bem atendido pelo site e cumpriu com o prazo da entrega!,,Store,,,,,,,,
 "Atendimento perfeito, entrega rápida, preços muito bons.",,Store,,,,,,,,
 "Muito bom, recebi o produto antes do prazo e recebi os e-mails com status.\n\nO que poderia melhoria em relação a entrega é apenas informar o dia/horário que a transportadora irá, para poder organizar uma pessoa p/ receber. Tive q deixar receber pelo meu vizinho e não pude verificar os aparelhos no recebimento.",,Store,,,,,,,,
 "Muito boa,me entregaram antes do prazo,achei isso muito bom.",,Store,,,,,,,,
-show de bola,,Store,,,,,,,,
+show de bola,Product,,,,,,,,,
 A encomenda chegou certinho!,,Store,,,,,,,,
 "A loja passa todas as informações do produto, fica mas trasparente e confiavel...",,Store,,,,,,,,
 Rapidos e seguros,,Store,,,,,,,,
@@ -6737,3 +6737,28 @@ OBRIGADO POR MANDAR O KIT. MAS TENHO DUVIDAS SE VOU CONTINUAR COMPRANDO NO SAIT.
 "Chegou direitinho, mas a pessoa que está usando não gostou! disse que o housekeeper não funciona.",Product,Store,Bad
 "Chegou direitinho",,Store,Good
 "chegou corretamente",,Store,Good
+"Show de bola",Product,,Good
+"O produto é show de bola",Product,,Good
+"Quem estiver em dúvida se vale a pena ou não comprar, pode confiar: vale muito a pena!!!!",Product,,Good
+"Vale a pena",Product,,Good
+"Vale muito a pena",Product,,Good
+"Se estiver em dúvida, só posso dizer que vale a pena",Product,,Good
+"Se estiver em dúvida, só posso dizer que vale muito a pena",Product,,Good
+"A confiabilidade dessa placa é uma coisa fora de sério",Product,,Good
+"Produto fora de série",Product,,Good
+"Super confiável",Product,,Good
+"Confiável",Product,,Goog
+"Site Confiável",,Store,Good
+"Pode comprar sem medo, site super confiável",,Store,Good
+"Pode confiar na qualidade do produto",Product,,Good
+"Até agora tá tudo bem mas quero ver quanto tempo vai durar",Product,,Good
+"tudo bem até agora",Product,,Good
+"Até o momento tá tudo bem mas quero ver quanto tempo vai durar",Product,,Good
+"até o momento",Product,,Neutral
+"até agora",Product,,Neutral
+"Tudo bem até o momento",Product,,Good
+"Eu tinha dois iguais a esse mas precisei vender por que minha mãe me obrigou. Agora que comprei um novo gostei muito. É melhor dos que os que eu tinha antes!",Product,,Good
+"Eu era acostumado a usar um mais amadeirado e menos forte mas comprei este pra experimentar e me dei super bem. Recomendo! A embalagem, no entanto, veio toda amassada.",Product,Store,Bad
+"Se eu soubesse que era tão bom já teria comprado há mais tempo.",Product,,Good
+"Deveria ter comprado antes",Product,,Good
+"Se eu soubesse o quão bom é, já teria comprado antes",Product,,Good
