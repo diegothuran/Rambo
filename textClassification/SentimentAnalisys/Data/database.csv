@@ -6734,3 +6734,6 @@ OBRIGADO POR MANDAR O KIT. MAS TENHO DUVIDAS SE VOU CONTINUAR COMPRANDO NO SAIT.
 "O produto é ótimo. E adorei o preço",Product,Store,Good
 "O produto é ótimo.",Product,,Good
 "Adorei o preço",,Store,Good
+"Chegou direitinho, mas a pessoa que está usando não gostou! disse que o housekeeper não funciona.",Product,Store,Bad
+"Chegou direitinho",,Store,Good
+"chegou corretamente",,Store,Good
