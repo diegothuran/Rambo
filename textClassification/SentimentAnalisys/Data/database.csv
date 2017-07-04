@@ -6762,3 +6762,7 @@ OBRIGADO POR MANDAR O KIT. MAS TENHO DUVIDAS SE VOU CONTINUAR COMPRANDO NO SAIT.
 "Se eu soubesse que era tão bom já teria comprado há mais tempo.",Product,,Good
 "Deveria ter comprado antes",Product,,Good
 "Se eu soubesse o quão bom é, já teria comprado antes",Product,,Good
+"Produto funcionou perfeitamente",Product,,Good
+"Produto não funcionou perfeitamente",Product,,Bad
+"Produto não funcionou corretamente",Product,,Bad
+"Produto funcionou corretamente",Product,,Good
