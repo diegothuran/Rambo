@@ -40,8 +40,8 @@ class Ensemble():
 
     def load_classifiers(self):
 
-        svm_product = joblib.load('textClassification/SentimentAnalisys/ClassifierWeigths/svm-02.pkl')
-        svm_store = joblib.load('textClassification/SentimentAnalisys/ClassifierWeigths/svm2-02.pkl')
+        svm_product = joblib.load('textClassification/SentimentAnalisys/ClassifierWeigths/sgd-02.pkl')
+        svm_store = joblib.load('textClassification/SentimentAnalisys/ClassifierWeigths/sgd2-02.pkl')
 
         return svm_product, svm_store
 
